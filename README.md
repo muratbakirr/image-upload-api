@@ -11,14 +11,15 @@ This API provides a backend service to support image uploads from a front-end ap
 The repository is organized as follows:
 
 image-upload-api/
-├── uploadController.js           # Contains the file upload and metadata insertion logic
-├── upload.test.js                # Unit tests for the /upload endpoint
-├── routes.js                     # Defines API routes (e.g., /upload) and CORS configuration
-├── app.js                        # Entry point for the API server
-├── .env                          # Environment variable configuration
-├── package.json                  # Project configuration and scripts
-├── package-lock.json             # Exact versions of installed dependencies (auto-generated)                # 
-└── README.md                     # Project documentation
+
+└─  uploadController.js      
+└─  upload.test.js           
+└─  routes.js                
+└─  app.js                   
+└─ .env                     
+└─ package.json             
+└─ package-lock.json        
+└─ README.md                
 
 ## Installation and Setup
 
@@ -27,30 +28,41 @@ image-upload-api/
 git clone https://github.com/dev-VAIN/image-upload-api.git
 cd image-upload-api
 ```
+2. Install Node.js
 
+* For Windows
+  
+Go to the official [Node.js website](https://nodejs.org/), click **LTS**, and download the version.
 
-2. Install Dependencies
+*  For MacOS
+
+Use homebrew to install Node.js
+```bash
+brew install node
+```
+
+3. Install Dependencies
 ```bash
 npm install
 ```
 
-3. Configure Environment Variables
-
-- Replace placeholders with actual credentials. 
-
-# AWS Configuration
+4. Configure Environment Variables
+ 
+* .env
+```bash
+AWS Configuration
 AWS_ACCESS_KEY_ID=your_access_key_id
 AWS_SECRET_ACCESS_KEY=your_secret_access_key
 AWS_REGION=us-east-1
 
-# S3 Configuration
+S3 Configuration
 S3_BUCKET_NAME=your-project-name-uploads
 
-# PostgreSQL Configuration
+PostgreSQL Configuration
 DATABASE_URL=postgresql://admin:admin@your-rds-endpoint:5432/imagedb
+```
 
-
-4. Start the Server
+5. Start the Server
 ```bash
 node app.js
 ```
